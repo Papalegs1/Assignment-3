@@ -1,0 +1,194 @@
+:root {
+  --bg: #faf9f7;
+  --card: #ffffff;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --accent: #1e7a46;
+  --accent-2: #cc8b37;
+  --radius: 14px;
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family:
+    system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+header {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: #fff;
+}
+
+header .tagline {
+  margin: 6px 0 14px;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-decoration: none;
+  backdrop-filter: saturate(120%) blur(2px);
+  transition: background 160ms ease, transform 120ms ease;
+}
+.nav a:hover,
+.nav a:focus {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+
+h1 { font-size: clamp(1.8rem, 2.4vw + 1rem, 2.4rem); }
+h2 { font-size: clamp(1.4rem, 1.6vw + 0.9rem, 1.75rem); }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.1rem; }
+
+p { margin: 0 0 12px; }
+em, i { color: var(--muted); }
+
+#intro, #restaurants, #notes, #contact {
+  padding: 18px 0;
+}
+
+.restaurant {
+  margin: 20px 0 30px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.restaurant-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+@media (min-width: 760px) {
+  .restaurant-header {
+    grid-template-columns: 320px 1fr;
+  }
+}
+
+.hero {
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 10px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.hero figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 6px;
+  text-align: center;
+}
+
+.card-grid {
+  margin-top: 10px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-f
+  )}
+
+  /* --- Favorites feature additions --- */
+.card .price-tag {
+  display: inline-block;
+  margin: 6px 0 8px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(30, 122, 70, 0.12);
+  font-weight: 600;
+}
+
+.btn-fav {
+  display: inline-block;
+  border: 0;
+  border-radius: 10px;
+  padding: 8px 12px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+.btn-fav:hover { transform: translateY(-1px); }
+.btn-fav:active { transform: translateY(0); }
+
+.card.is-favorite {
+  outline: 3px solid var(--accent);
+  background: #eef8f1;
+}
+
+#favorites-panel {
+  margin: 20px 0 30px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+#favorites-panel h2 {
+  margin-bottom: 8px;
+}
+.favorites-list {
+  margin: 8px 0 12px;
+  padding-left: 18px;
+}
+.favorites-total {
+  font-weight: 700;
+}
+.favorites-empty {
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+
+.card .controls {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
